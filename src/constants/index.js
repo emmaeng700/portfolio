@@ -179,20 +179,6 @@ export const projects = [
         link: 'https://github.com/emmaeng700',
     },
     {
-        iconUrl: car,
-        theme: 'btn-back-pink',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/emmaeng700',
-    },
-    {
-        iconUrl: snapgram,
-        theme: 'btn-back-black',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/emmaeng700',
-    },
-    {
         iconUrl: summiz,
         theme: 'btn-back-yellow',
         name: 'AI Summarizer Application',
