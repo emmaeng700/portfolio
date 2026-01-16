@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { meta, shopify, starbucks, tesla, grambling, alx } from "../assets/images";
 import {
     car,
     contact,
@@ -113,7 +113,7 @@ export const experiences = [
     {
         title: "Research Assistant - ML",
         company_name: "Grambling State University",
-        icon: starbucks,
+        icon: grambling,
         iconBg: "#ffd700",
         date: "Jan 2025 - Present",
         points: [
@@ -126,7 +126,7 @@ export const experiences = [
     {
         title: "Software Engineer Intern",
         company_name: "ALX Africa",
-        icon: meta,
+        icon: alx,
         iconBg: "#ff6b35",
         date: "Feb 2023 - Feb 2024",
         points: [
