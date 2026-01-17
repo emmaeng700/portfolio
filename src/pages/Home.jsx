@@ -8,8 +8,6 @@ import { Bird, Island, Plane, Sky } from "../models";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
-  audioRef.current.volume = 0.4;
-  audioRef.current.loop = true;
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
@@ -17,12 +15,22 @@ const Home = () => {
   const [showTip, setShowTip] = useState(false);
 
   useEffect(() => {
+    const audio = audioRef.current;
+    audio.volume = 0.4;
+    audio.loop = true;
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
     if (isPlayingMusic) {
-      audioRef.current.play();
+      audio.play();
+    } else {
+      audio.pause();
     }
 
     return () => {
-      audioRef.current.pause();
+      audio.pause();
     };
   }, [isPlayingMusic]);
 
