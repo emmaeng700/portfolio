@@ -158,25 +158,32 @@ export const socialLinks = [
 
 export const projects = [
     {
-        iconUrl: estate,
-        theme: 'btn-back-red',
-        name: 'MateMatch',
-        description: 'Built a secure web app with Firebase Auth enabling interns to discover, list, and share housing via location-aware features. Used Puppeteer to crawl Airbnb listings and integrated Google Maps API for commute-time calculations.',
-        link: 'https://github.com/emmaeng700',
-    },
-    {
         iconUrl: threads,
         theme: 'btn-back-green',
         name: 'Go Container',
         description: 'Built a container runtime in Go with process isolation leveraging Linux namespaces. Implemented resource controls using cgroups and set up a secure filesystem environment using chroot.',
-        link: 'https://github.com/emmaeng700',
+        link: 'https://github.com/emmaeng700/distributed-systems',
+    },
+    {
+        iconUrl: car,
+        theme: 'btn-back-pink',
+        name: 'KubeFlowX',
+        description: 'A Kubernetes microservices orchestration tool with Spring Boot and Java K8s client. Features real-time deployment management, scaling, resource configuration, and monitoring with responsive Tailwind CSS interface.',
+        link: 'https://github.com/emmaeng700/KubeFlowX',
     },
     {
         iconUrl: pricewise,
         theme: 'btn-back-blue',
         name: 'NanoSQL',
         description: 'Built a high-performance SQLite-clone database engine in C, implementing B-tree indexing, persistent storage, and custom memory management with optimized page allocation.',
-        link: 'https://github.com/emmaeng700',
+        link: 'https://github.com/emmaeng700/C-Database',
+    },
+    {
+        iconUrl: estate,
+        theme: 'btn-back-red',
+        name: 'MateMatch',
+        description: 'Built a secure web app with Firebase Auth enabling interns to discover, list, and share housing via location-aware features. Used Puppeteer to crawl Airbnb listings and integrated Google Maps API for commute-time calculations.',
+        link: 'https://github.com/emmaeng700/matematch',
     },
     {
         iconUrl: summiz,

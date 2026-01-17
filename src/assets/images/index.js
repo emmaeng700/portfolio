@@ -6,6 +6,7 @@ import tesla from './tesla.png'
 import logo from './me.png'
 import grambling from './grambling.png'
 import alx from './alx.png'
+import nu from './nu.png'
 
 export {
     hero,
@@ -15,5 +16,6 @@ export {
     tesla,
     logo,
     grambling,
-    alx
+    alx,
+    nu
 }
