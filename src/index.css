@@ -10,6 +10,29 @@ body {
   font-family: "Work Sans", sans-serif;
 }
 
+/* Global mobile-safe defaults to prevent horizontal overflow */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Stop accidental horizontal scroll on small devices */
+}
+
+/* Ensure media scales within viewport on phones */
+img, canvas, iframe, video, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent long text/URLs from causing overflow */
+p, h1, h2, h3, h4, h5, h6, li {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
 body:has(.card[data-color="blue"]:hover) {
   background-color: rgb(var(--blue-rgb) / 25%);
 }
