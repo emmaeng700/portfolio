@@ -3,7 +3,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 
 import sakura from "../assets/sakura.mp3";
 import { HomeInfo, Loader } from "../components";
-import { soundoff, soundon } from "../assets/icons";
+import { soundoff, soundon, linkedin, github, twitter } from "../assets/icons";
 import { Bird, Island, Plane, Sky } from "../models";
 
 const Home = () => {
@@ -163,6 +163,37 @@ const Home = () => {
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
           className='w-10 h-10 cursor-pointer object-contain'
         />
+      </div>
+
+      {/* Social Media Links */}
+      <div className='absolute bottom-2 right-2 flex gap-2'>
+        <a
+          href='https://www.linkedin.com/in/emmanuel-oppong-acheampong/'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300'
+          aria-label='LinkedIn'
+        >
+          <img src={linkedin} alt='LinkedIn' className='w-5 h-5 object-contain filter brightness-0 invert' />
+        </a>
+        <a
+          href='https://github.com/emmaeng700'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-900 transition-colors duration-300'
+          aria-label='GitHub'
+        >
+          <img src={github} alt='GitHub' className='w-5 h-5 object-contain filter brightness-0 invert' />
+        </a>
+        <a
+          href='https://x.com/oppongemmachuks'
+          target='_blank'
+          rel='noopener noreferrer'
+          className='w-10 h-10 flex items-center justify-center rounded-full bg-black hover:bg-gray-800 transition-colors duration-300'
+          aria-label='Twitter'
+        >
+          <img src={twitter} alt='Twitter' className='w-5 h-5 object-contain filter brightness-0 invert' />
+        </a>
       </div>
     </section>
   );

@@ -1,10 +1,11 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
 import { Alert, Loader } from "../components";
+import { linkedin, github, twitter } from "../assets/icons";
 
 const Contact = () => {
   const formRef = useRef();
@@ -12,6 +13,21 @@ const Contact = () => {
   const { alert, showAlert, hideAlert } = useAlert();
   const [loading, setLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const [foxPosition, setFoxPosition] = useState([0.5, 0.35, 0]);
+
+  useEffect(() => {
+    const updateFoxPosition = () => {
+      if (window.innerWidth < 768) {
+        setFoxPosition([0.5, 1.5, 0]);
+      } else {
+        setFoxPosition([0.5, 0.35, 0]);
+      }
+    };
+
+    updateFoxPosition();
+    window.addEventListener('resize', updateFoxPosition);
+    return () => window.removeEventListener('resize', updateFoxPosition);
+  }, []);
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -78,10 +94,44 @@ const Contact = () => {
       <div className='flex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
 
+        {/* Social Media Links */}
+        <div className='mt-4 mb-2'>
+          <h2 className='text-lg font-semibold text-black mb-2'>Connect with me</h2>
+          <div className='flex gap-2'>
+            <a
+              href='https://www.linkedin.com/in/emmanuel-oppong-acheampong/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='w-9 h-9 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 transition-colors duration-300'
+              aria-label='LinkedIn'
+            >
+              <img src={linkedin} alt='LinkedIn' className='w-5 h-5 object-contain filter brightness-0 invert' />
+            </a>
+            <a
+              href='https://github.com/emmaeng700'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gray-900 transition-colors duration-300'
+              aria-label='GitHub'
+            >
+              <img src={github} alt='GitHub' className='w-5 h-5 object-contain filter brightness-0 invert' />
+            </a>
+            <a
+              href='https://x.com/oppongemmachuks'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='w-9 h-9 flex items-center justify-center rounded-full bg-black hover:bg-gray-800 transition-colors duration-300'
+              aria-label='Twitter'
+            >
+              <img src={twitter} alt='Twitter' className='w-5 h-5 object-contain filter brightness-0 invert' />
+            </a>
+          </div>
+        </div>
+
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='w-full flex flex-col gap-7 mt-14'
+          className='w-full flex flex-col gap-7 mt-6'
         >
           <label className='text-black-500 font-semibold'>
             Name
@@ -159,7 +209,7 @@ const Contact = () => {
           <Suspense fallback={<Loader />}>
             <Fox
               currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
+              position={foxPosition}
               rotation={[12.629, -0.6, 0]}
               scale={[0.5, 0.5, 0.5]}
             />

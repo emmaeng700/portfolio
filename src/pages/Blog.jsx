@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { CTA } from "../components";
 
 const Blog = () => {
   const [showHireCard, setShowHireCard] = useState(false);
@@ -178,6 +179,10 @@ const Blog = () => {
           Replace the sample YouTube embed URLs with your actual video links.
         </p>
       </div>
+
+      <hr className='border-slate-200' />
+
+      <CTA />
     </section>
   );
 };
