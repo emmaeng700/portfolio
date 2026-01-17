@@ -14,6 +14,7 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(true);
+  const [showTip, setShowTip] = useState(false);
 
   useEffect(() => {
     if (isPlayingMusic) {
@@ -103,6 +104,29 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
+
+      <div className='absolute bottom-20 left-2 right-2'>
+        {!showTip ? (
+          <button
+            onClick={() => setShowTip(true)}
+            className='bg-blue-600 hover:bg-blue-700 text-white rounded-full w-8 h-8 flex items-center justify-center text-lg font-bold cursor-pointer transition-all'
+          >
+            ?
+          </button>
+        ) : (
+          <div className='bg-gray-900 bg-opacity-75 rounded-lg px-4 py-3 max-w-xs flex justify-between items-start gap-2'>
+            <p className='text-sm text-gray-300'>
+              💡 <span>Move plane: arrow keys, drag with mouse, or touch & swipe on mobile</span>
+            </p>
+            <button
+              onClick={() => setShowTip(false)}
+              className='text-gray-400 hover:text-white text-lg font-bold cursor-pointer'
+            >
+              ✕
+            </button>
+          </div>
+        )}
+      </div>
 
       <div className='absolute bottom-2 left-2'>
         <img
