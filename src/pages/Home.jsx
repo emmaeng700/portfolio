@@ -18,20 +18,40 @@ const Home = () => {
     const audio = audioRef.current;
     audio.volume = 0.4;
     audio.loop = true;
+    
+    // Start playing immediately - browser autoplay policy will be handled
+    const playAudio = () => {
+      audio.play().catch(() => {
+        // If autoplay fails, try again on any user interaction
+        const startOnInteraction = () => {
+          audio.play().then(() => {
+            document.removeEventListener('click', startOnInteraction);
+            document.removeEventListener('keydown', startOnInteraction);
+            document.removeEventListener('touchstart', startOnInteraction);
+          });
+        };
+        
+        document.addEventListener('click', startOnInteraction);
+        document.addEventListener('keydown', startOnInteraction);
+        document.addEventListener('touchstart', startOnInteraction);
+      });
+    };
+
+    playAudio();
+
+    return () => {
+      audio.pause();
+    };
   }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
 
     if (isPlayingMusic) {
-      audio.play();
+      audio.play().catch(() => {});
     } else {
       audio.pause();
     }
-
-    return () => {
-      audio.pause();
-    };
   }, [isPlayingMusic]);
 
   const adjustBiplaneForScreenSize = () => {
