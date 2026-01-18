@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { CTA, PostModal, DescriptionTooltip } from "../components";
 
 const Blog = () => {
@@ -114,12 +115,12 @@ const Blog = () => {
             <strong> He is actively seeking internship and full-time opportunities for Summer 2026.</strong>
           </p>
           <div className='flex gap-4 flex-wrap'>
-            <a
-              href='/contact'
+            <Link
+              to='/contact'
               className='px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors'
             >
               Get in Touch
-            </a>
+            </Link>
             <a
               href='https://linkedin.com/in/emmanuel-oppong-acheampong'
               target='_blank'
