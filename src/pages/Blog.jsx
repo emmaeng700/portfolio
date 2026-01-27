@@ -105,7 +105,7 @@ const Blog = () => {
       </div>
 
       <div className='mt-12 flex flex-col gap-12'>
-        <div className='p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border-2 border-blue-200 animate-in fade-in'>
+        <div className='p-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border-2 border-blue-200 animate-in fade-in flex flex-col gap-6'>
           <h2 className='text-2xl font-bold text-gray-900 mb-4'>
             📢 Why Emmanuel is a Good Fit for the Team?
           </h2>
@@ -130,16 +130,22 @@ const Blog = () => {
             >
               View LinkedIn
             </a>
-            <a
-              href={resumePdf}
-              download='Emmanuel_Oppong_Resume.pdf'
-              className='px-6 py-3 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-700 transition-colors flex items-center gap-2'
-            >
-              <svg xmlns='http://www.w3.org/2000/svg' className='h-5 w-5' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
-                <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' />
-              </svg>
-              Resume
-            </a>
+          </div>
+
+          <div className='mt-6 bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden'>
+            <div className='px-4 py-3 flex items-center justify-between bg-slate-50 border-b border-slate-200'>
+              <span className='font-semibold text-slate-700'>Resume (view-only)</span>
+              <span className='text-xs text-slate-500'>Toolbar hidden; downloads disabled</span>
+            </div>
+            <div className='h-[75vh] sm:h-[85vh] lg:h-[92vh] overflow-y-auto'>
+              <iframe
+                title='Emmanuel Oppong resume preview'
+                src={`${resumePdf}#toolbar=0&navpanes=0&scrollbar=0`}
+                className='w-full h-full min-h-[75vh] sm:min-h-[85vh] lg:min-h-[92vh]'
+                loading='lazy'
+                onContextMenu={(e) => e.preventDefault()}
+              />
+            </div>
           </div>
         </div>
         {posts.map((post) => (

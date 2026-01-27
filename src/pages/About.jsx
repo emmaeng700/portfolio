@@ -1,5 +1,6 @@
 import { CTA } from "../components";
 import { experiences, skills } from "../constants";
+import resumePdf from "../assets/Emmanuel Oppong(updated resume).pdf";
 
 const About = () => {
   return (
@@ -96,6 +97,22 @@ const About = () => {
       </div>
 
       <hr className='border-slate-200' />
+
+      <div className='mt-10 flex flex-col gap-4'>
+        <h3 className='subhead-text'>Resume</h3>
+        <p className='text-slate-500'>View-only preview. Download is disabled.</p>
+        <div className='rounded-xl border border-slate-200 shadow-md bg-white overflow-hidden'>
+          <div className='h-[75vh] sm:h-[85vh] lg:h-[92vh] overflow-y-auto'>
+            <iframe
+              title='Emmanuel Oppong resume'
+              src={`${resumePdf}#toolbar=0&navpanes=0&scrollbar=0`}
+              className='w-full h-full min-h-[75vh] sm:min-h-[85vh] lg:min-h-[92vh]'
+              loading='lazy'
+              onContextMenu={(e) => e.preventDefault()}
+            />
+          </div>
+        </div>
+      </div>
 
       <CTA />
     </section>
