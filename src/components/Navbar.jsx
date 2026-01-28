@@ -32,20 +32,20 @@ const Navbar = () => {
       </button>
 
       {/* Desktop Navigation - hidden on small screens */}
-      <nav className='hidden md:flex text-lg gap-7 font-medium'>
-        <NavLink to='/' className={({ isActive }) => isActive ? "text-blue-600" : "text-black" }>
+      <nav className='hidden md:flex text-base gap-7'>
+        <NavLink to='/' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
           Home
         </NavLink>
-        <NavLink to='/about' className={({ isActive }) => isActive ? "text-blue-600" : "text-black" }>
+        <NavLink to='/about' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
           About
         </NavLink>
-        <NavLink to='/projects' className={({ isActive }) => isActive ? "text-blue-600" : "text-black"}>
+        <NavLink to='/projects' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
           Projects
         </NavLink>
-        <NavLink to='/blog' className={({ isActive }) => isActive ? "text-blue-600" : "text-black"}>
+        <NavLink to='/blog' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
           Blog
         </NavLink>
-        <NavLink to='/contact' className={({ isActive }) => isActive ? "text-blue-600" : "text-black"}>
+        <NavLink to='/contact' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
           Contact
         </NavLink>
       </nav>
@@ -55,35 +55,35 @@ const Navbar = () => {
         <div className='flex flex-col py-2'>
           <NavLink 
             to='/' 
-            className={({ isActive }) => `px-4 py-2 text-base font-medium rounded-lg mx-1 ${isActive ? "text-blue-600 bg-blue-50" : "text-black hover:bg-gray-100"}`}
+            className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
             onClick={closeMenu}
           >
             Home
           </NavLink>
           <NavLink 
             to='/about' 
-            className={({ isActive }) => `px-4 py-2 text-base font-medium rounded-lg mx-1 ${isActive ? "text-blue-600 bg-blue-50" : "text-black hover:bg-gray-100"}`}
+            className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
             onClick={closeMenu}
           >
             About
           </NavLink>
           <NavLink 
             to='/projects' 
-            className={({ isActive }) => `px-4 py-2 text-base font-medium rounded-lg mx-1 ${isActive ? "text-blue-600 bg-blue-50" : "text-black hover:bg-gray-100"}`}
+            className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
             onClick={closeMenu}
           >
             Projects
           </NavLink>
           <NavLink 
             to='/blog' 
-            className={({ isActive }) => `px-4 py-2 text-base font-medium rounded-lg mx-1 ${isActive ? "text-blue-600 bg-blue-50" : "text-black hover:bg-gray-100"}`}
+            className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
             onClick={closeMenu}
           >
             Blog
           </NavLink>
           <NavLink 
             to='/contact' 
-            className={({ isActive }) => `px-4 py-2 text-base font-medium rounded-lg mx-1 ${isActive ? "text-blue-600 bg-blue-50" : "text-black hover:bg-gray-100"}`}
+            className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
             onClick={closeMenu}
           >
             Contact

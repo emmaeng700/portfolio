@@ -1,5 +1,6 @@
 import { CTA } from "../components";
 import { experiences, skills } from "../constants";
+import { emma } from "../assets/images";
 import resumePdf from "../assets/Emmanuel Oppong(updated resume).pdf";
 
 const About = () => {
@@ -97,6 +98,21 @@ const About = () => {
       </div>
 
       <hr className='border-slate-200' />
+
+      <div className='mt-10 flex flex-col gap-6'>
+        <h3 className='subhead-text'>Images</h3>
+        <p className='text-slate-500'>Snapshots from conferences and moments that inspire my work.</p>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
+          <div className='w-full'>
+            <img
+              src={emma}
+              alt='Portrait of Emmanuel Oppong'
+              className='w-full rounded-2xl border border-slate-200 shadow-md object-cover bg-white'
+              loading='lazy'
+            />
+          </div>
+        </div>
+      </div>
 
       <div className='mt-10 flex flex-col gap-4'>
         <h3 className='subhead-text'>Resume</h3>
