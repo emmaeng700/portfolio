@@ -11,6 +11,10 @@ import buildql from './buildql.png'
 import nu from './nu.png'
 import ericsson from './ericsson.png'
 import noon from './noon.png'
+import jpmorgan from './jpmorgan.png'
+import wellsfargo from './wellsfargo.png'
+import hpe from './hpe.png'
+import forage from './forage.png'
 
 export {
     hero,
@@ -25,5 +29,9 @@ export {
     nu,
     buildql,
     ericsson,
-    noon
+    noon,
+    jpmorgan,
+    wellsfargo,
+    hpe,
+    forage
 }

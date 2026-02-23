@@ -1,7 +1,7 @@
 import { CTA } from "../components";
 import { experiences, skills } from "../constants";
 import { emma } from "../assets/images";
-import resumePdf from "../assets/Emmanuel Oppong(updated resume).pdf";
+import resumePdf from "../assets/EMMANUEL_OPPONG_RESUME.pdf";
 
 const About = () => {
   return (

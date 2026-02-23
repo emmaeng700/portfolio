@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { CTA, PostModal, DescriptionTooltip } from "../components";
-import resumePdf from "../assets/Emmanuel Oppong(updated resume).pdf";
+import resumePdf from "../assets/EMMANUEL_OPPONG_RESUME.pdf";
 
 const Blog = () => {
   const [selectedPost, setSelectedPost] = useState(null);
