@@ -45,6 +45,9 @@ const Navbar = () => {
         <NavLink to='/blog' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
           Blog
         </NavLink>
+        <NavLink to='/opensourcecontributions' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
+          Open Source
+        </NavLink>
         <NavLink to='/contact' style={({ isActive }) => isActive ? { color: '#4ade80', fontWeight: 'bold' } : { color: '#111827' }}>
           Contact
         </NavLink>
@@ -74,15 +77,22 @@ const Navbar = () => {
           >
             Projects
           </NavLink>
-          <NavLink 
-            to='/blog' 
+          <NavLink
+            to='/blog'
             className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
             onClick={closeMenu}
           >
             Blog
           </NavLink>
-          <NavLink 
-            to='/contact' 
+          <NavLink
+            to='/opensourcecontributions'
+            className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
+            onClick={closeMenu}
+          >
+            Open Source
+          </NavLink>
+          <NavLink
+            to='/contact'
             className={({ isActive }) => `px-4 py-2 text-base rounded-lg mx-1 ${isActive ? "font-bold text-green-400 bg-green-100" : "font-normal text-black hover:bg-gray-100"}`}
             onClick={closeMenu}
           >
