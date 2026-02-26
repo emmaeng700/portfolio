@@ -1,9 +1,13 @@
 import { CTA } from "../components";
+import OpenSourceSection from "../components/OpenSourceSection";
 import { experiences, skills } from "../constants";
 import { emma } from "../assets/images";
 import resumePdf from "../assets/EMMANUEL_OPPONG_RESUME.pdf";
+import useOpenSourcePRs from "../hooks/useOpenSourcePRs";
 
 const About = () => {
+  const { prs, loading, error } = useOpenSourcePRs();
+
   return (
     <section className='max-container'>
       <h1 className='head-text'>
@@ -40,6 +44,8 @@ const About = () => {
           ))}
         </div>
       </div>
+
+      <OpenSourceSection prs={prs} loading={loading} error={error} />
 
       <div className='py-16'>
         <h3 className='subhead-text'>Work Experience</h3>
