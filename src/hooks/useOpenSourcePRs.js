@@ -5,6 +5,10 @@ const REPOS = [
   { owner: "apache", repo: "kafka" },
   { owner: "pgjdbc", repo: "pgjdbc" },
   { owner: "kubernetes-client", repo: "java" },
+  { owner: "elastic", repo: "elasticsearch" },
+  { owner: "helm", repo: "helm" },
+  { owner: "scikit-learn", repo: "scikit-learn" },
+  { owner: "microsoft", repo: "vscode" },
 ];
 
 const GITHUB_USER = "emmaeng700";
@@ -30,7 +34,12 @@ function useOpenSourcePRs() {
                       .filter((pr) => pr.user?.login === GITHUB_USER)
                       .map((pr) => ({
                         id: pr.id,
-                        project: repo === "java" ? "Kubernetes Java Client" : repo.charAt(0).toUpperCase() + repo.slice(1),
+                        project:
+                          repo === "java" ? "Kubernetes Java Client" :
+                          repo === "scikit-learn" ? "Scikit-Learn" :
+                          repo === "vscode" ? "VS Code" :
+                          repo === "elasticsearch" ? "Elasticsearch" :
+                          repo.charAt(0).toUpperCase() + repo.slice(1),
                         repo: `${owner}/${repo}`,
                         pr: `PR #${pr.number}`,
                         url: pr.html_url,
